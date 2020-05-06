@@ -10,4 +10,4 @@ commands:
   monitor:
     usage: /monitor ram
     description: Shows ram usage onscreen
-    permission: servermonitor.ramIATag
+    permission: servermonitor

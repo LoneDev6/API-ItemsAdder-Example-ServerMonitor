@@ -24,7 +24,6 @@ public class MainCommand implements CommandExecutor
             return true;
 
         Player player = (Player) commandSender;
-        System.out.println("a");
 
         if(args[0].equals("ram"))
         {

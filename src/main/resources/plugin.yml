@@ -1,0 +1,13 @@
+name: ServerMonitor
+version: ${project.version}
+main: dev.lone.ServerMonitor.Main
+api-version: 1.13
+authors: [LoneDev]
+description: ItemsAdder addon that shows some server info onscreen
+depend:
+  - ItemsAdder
+commands:
+  monitor:
+    usage: /monitor ram
+    description: Shows ram usage onscreen
+    permission: servermonitor.ramIATag

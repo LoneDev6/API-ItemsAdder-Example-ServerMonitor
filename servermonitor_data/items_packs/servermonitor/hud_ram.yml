@@ -1,0 +1,32 @@
+info:
+  namespace: "servermonitor"
+huds:
+  ram:
+    enabled: true
+    show:
+      auto: false
+    type: FRAMES
+    x_position_pixels: -158
+    value:
+      player_stat_name: "ram"
+      start: 0
+      min: 0
+      max: 15
+    images:
+      frames:
+        - "servermonitor:ram_1"
+        - "servermonitor:ram_5"
+        - "servermonitor:ram_7"
+        - "servermonitor:ram_10"
+        - "servermonitor:ram_15"
+        - "servermonitor:ram_20"
+        - "servermonitor:ram_25"
+        - "servermonitor:ram_30"
+        - "servermonitor:ram_35"
+        - "servermonitor:ram_40"
+        - "servermonitor:ram_45"
+        - "servermonitor:ram_50"
+        - "servermonitor:ram_65"
+        - "servermonitor:ram_75"
+        - "servermonitor:ram_85"
+        - "servermonitor:ram_100"

@@ -1,0 +1,14 @@
+info:
+  namespace: "servermonitor"
+huds:
+  cpu_graph:
+    enabled: true
+    show:
+      auto: false
+    type: CUSTOM
+    x_position_pixels: -300
+    value:
+      player_stat_name: "cpu_graph"
+      start: 0
+      min: 0
+      max: 0

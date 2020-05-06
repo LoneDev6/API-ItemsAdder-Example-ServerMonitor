@@ -1,0 +1,156 @@
+info:
+  namespace: "servermonitor"
+font_images:
+  graph_start:
+        path: "font/hud/graph/start.png"
+        y_position: -12
+  graph_1:
+        path: "font/hud/graph/1.png"
+        y_position: -12
+  graph_2:
+        path: "font/hud/graph/2.png"
+        y_position: -12
+  graph_3:
+        path: "font/hud/graph/3.png"
+        y_position: -12
+  graph_4:
+        path: "font/hud/graph/4.png"
+        y_position: -12
+  graph_5:
+        path: "font/hud/graph/5.png"
+        y_position: -12
+  graph_6:
+        path: "font/hud/graph/6.png"
+        y_position: -12
+  graph_7:
+        path: "font/hud/graph/7.png"
+        y_position: -12
+  graph_8:
+        path: "font/hud/graph/8.png"
+        y_position: -12
+  graph_9:
+        path: "font/hud/graph/9.png"
+        y_position: -12
+  graph_10:
+        path: "font/hud/graph/10.png"
+        y_position: -12
+  graph_11:
+        path: "font/hud/graph/11.png"
+        y_position: -12
+  graph_12:
+        path: "font/hud/graph/12.png"
+        y_position: -12
+  graph_13:
+        path: "font/hud/graph/13.png"
+        y_position: -12
+  graph_14:
+        path: "font/hud/graph/14.png"
+        y_position: -12
+  graph_15:
+        path: "font/hud/graph/15.png"
+        y_position: -12
+  graph_16:
+        path: "font/hud/graph/16.png"
+        y_position: -12
+  graph_17:
+        path: "font/hud/graph/17.png"
+        y_position: -12
+  graph_18:
+        path: "font/hud/graph/18.png"
+        y_position: -12
+  graph_19:
+        path: "font/hud/graph/19.png"
+        y_position: -12
+  graph_20:
+        path: "font/hud/graph/20.png"
+        y_position: -12
+  graph_21:
+        path: "font/hud/graph/21.png"
+        y_position: -12
+  graph_22:
+        path: "font/hud/graph/22.png"
+        y_position: -12
+  graph_23:
+        path: "font/hud/graph/23.png"
+        y_position: -12
+  graph_24:
+        path: "font/hud/graph/24.png"
+        y_position: -12
+  graph_25:
+        path: "font/hud/graph/25.png"
+        y_position: -12
+  graph_26:
+        path: "font/hud/graph/26.png"
+        y_position: -12
+  graph_27:
+        path: "font/hud/graph/27.png"
+        y_position: -12
+  graph_28:
+        path: "font/hud/graph/28.png"
+        y_position: -12
+  graph_29:
+        path: "font/hud/graph/29.png"
+        y_position: -12
+  graph_30:
+        path: "font/hud/graph/30.png"
+        y_position: -12
+  graph_31:
+        path: "font/hud/graph/31.png"
+        y_position: -12
+  graph_32:
+        path: "font/hud/graph/32.png"
+        y_position: -12
+  graph_33:
+        path: "font/hud/graph/33.png"
+        y_position: -12
+  graph_34:
+        path: "font/hud/graph/34.png"
+        y_position: -12
+  graph_35:
+        path: "font/hud/graph/35.png"
+        y_position: -12
+  graph_36:
+        path: "font/hud/graph/36.png"
+        y_position: -12
+  graph_37:
+        path: "font/hud/graph/37.png"
+        y_position: -12
+  graph_38:
+        path: "font/hud/graph/38.png"
+        y_position: -12
+  graph_39:
+        path: "font/hud/graph/39.png"
+        y_position: -12
+  graph_40:
+        path: "font/hud/graph/40.png"
+        y_position: -12
+  graph_41:
+        path: "font/hud/graph/41.png"
+        y_position: -12
+  graph_42:
+        path: "font/hud/graph/42.png"
+        y_position: -12
+  graph_43:
+        path: "font/hud/graph/43.png"
+        y_position: -12
+  graph_44:
+        path: "font/hud/graph/44.png"
+        y_position: -12
+  graph_45:
+        path: "font/hud/graph/45.png"
+        y_position: -12
+  graph_46:
+        path: "font/hud/graph/46.png"
+        y_position: -12
+  graph_47:
+        path: "font/hud/graph/47.png"
+        y_position: -12
+  graph_48:
+        path: "font/hud/graph/48.png"
+        y_position: -12
+  graph_49:
+        path: "font/hud/graph/49.png"
+        y_position: -12
+  graph_50:
+        path: "font/hud/graph/50.png"
+        y_position: -12

@@ -1,0 +1,9 @@
+info:
+  namespace: "servermonitor"
+font_images:
+  text_ram:
+        path: "font/hud/text/ram.png"
+        y_position: 1
+  text_cpu:
+        path: "font/hud/text/cpu.png"
+        y_position: 1

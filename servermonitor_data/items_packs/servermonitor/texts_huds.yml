@@ -1,0 +1,25 @@
+info:
+  namespace: "servermonitor"
+huds:
+  text_ram:
+    enabled: true
+    show:
+      auto: false
+    type: CUSTOM
+    x_position_pixels: -158
+    value:
+      player_stat_name: "text_ram"
+      start: 0
+      min: 0
+      max: 0
+  text_cpu:
+    enabled: true
+    show:
+      auto: false
+    type: CUSTOM
+    x_position_pixels: -300
+    value:
+      player_stat_name: "text_cpu"
+      start: 0
+      min: 0
+      max: 0

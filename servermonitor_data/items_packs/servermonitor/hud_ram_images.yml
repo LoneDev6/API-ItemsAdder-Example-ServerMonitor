@@ -1,0 +1,51 @@
+info:
+  namespace: "servermonitor"
+font_images:
+  ram_1:
+    path: "font/hud/ram/1.png"
+    y_position: -12
+  ram_5:
+    path: "font/hud/ram/5.png"
+    y_position: -12
+  ram_7:
+    path: "font/hud/ram/7.png"
+    y_position: -12
+  ram_10:
+    path: "font/hud/ram/10.png"
+    y_position: -12
+  ram_15:
+    path: "font/hud/ram/15.png"
+    y_position: -12
+  ram_20:
+    path: "font/hud/ram/20.png"
+    y_position: -12
+  ram_25:
+    path: "font/hud/ram/25.png"
+    y_position: -12
+  ram_30:
+    path: "font/hud/ram/30.png"
+    y_position: -12
+  ram_35:
+    path: "font/hud/ram/35.png"
+    y_position: -12
+  ram_40:
+    path: "font/hud/ram/40.png"
+    y_position: -12
+  ram_45:
+    path: "font/hud/ram/45.png"
+    y_position: -12
+  ram_50:
+    path: "font/hud/ram/50.png"
+    y_position: -12
+  ram_65:
+    path: "font/hud/ram/65.png"
+    y_position: -12
+  ram_75:
+    path: "font/hud/ram/75.png"
+    y_position: -12
+  ram_85:
+    path: "font/hud/ram/85.png"
+    y_position: -12
+  ram_100:
+    path: "font/hud/ram/100.png"
+    y_position: -12

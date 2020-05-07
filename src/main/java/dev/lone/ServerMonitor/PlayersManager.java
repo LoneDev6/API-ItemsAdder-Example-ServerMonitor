@@ -24,6 +24,8 @@ public class PlayersManager implements Listener
     public BukkitTask taskRAM;
     public BukkitTask taskCPU;
 
+    public static final int CPU_HEIGHT = 50;
+
     public PlayersManager(final Plugin plugin)
     {
         this.plugin = plugin;
@@ -53,7 +55,7 @@ public class PlayersManager implements Listener
             {
                 if(!playerDataHolder.isCPUShown)
                     continue;
-                int cpuLoad = (int) (getProcessCpuLoad() * playerDataHolder.hudCPU.getFontImagesCount() / 100);
+                int cpuLoad = (int) (getProcessCpuLoad() * CPU_HEIGHT / 100);
 
                 playerDataHolder.hudCPU.removeFontImageByIndex(1);
 
@@ -67,24 +69,6 @@ public class PlayersManager implements Listener
     private double getProcessCpuLoad()
     {
         return osBean.getProcessCpuLoad()*100;
-    }
-
-    @EventHandler
-    private void catchReloadIA_plugman(PluginDisableEvent e)
-    {
-        if(!e.getPlugin().getName().equals("ItemsAdder"))
-            return;
-
-        Main.clear();
-    }
-
-    @EventHandler
-    private void catchReloadIA_plugman(PluginEnableEvent e)//TODO: fix
-    {
-        if(!e.getPlugin().getName().equals("ItemsAdder"))
-            return;
-
-        Main.init();
     }
 
 }

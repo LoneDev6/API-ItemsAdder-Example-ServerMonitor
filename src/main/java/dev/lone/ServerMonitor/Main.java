@@ -1,11 +1,16 @@
 package dev.lone.ServerMonitor;
 
 import dev.lone.ServerMonitor.commands.MainCommand;
+import dev.lone.itemsadder.api.Events.ItemsAdderFirstLoadEvent;
 import dev.lone.itemsadder.api.ItemsAdder;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.server.PluginDisableEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Main extends JavaPlugin
+public final class Main extends JavaPlugin implements Listener
 {
     public static Main instance;
     public static PlayersManager playersManager;
@@ -16,7 +21,15 @@ public final class Main extends JavaPlugin
     public synchronized void onEnable()
     {
         instance = this;
-        init();
+
+        if(ItemsAdder.areItemsLoaded())
+        {
+            init();
+        }
+        else
+        {
+            Bukkit.getPluginManager().registerEvents(this, this);
+        }
     }
 
     @Override
@@ -25,24 +38,31 @@ public final class Main extends JavaPlugin
         clear();
     }
 
-    public static void init()
+    @EventHandler
+    void itemsadderLoad(ItemsAdderFirstLoadEvent e)
     {
-        Bukkit.getScheduler().runTaskAsynchronously(instance, () ->
-        {
-            //dirty
-            while(!ItemsAdder.areItemsLoaded()){}
-            Bukkit.getScheduler().runTask(instance, () ->
-            {
-                playersManager = new PlayersManager(instance);
-                playersManager.scheduleHudsHandling();
-                if(mainCmd == null)
-                {
-                    mainCmd = new MainCommand(instance);
-                    Bukkit.getPluginCommand("monitor").setExecutor(mainCmd);
-                }
-            });
-        });
+       init();
+    }
 
+    private void init()
+    {
+        getLogger().info(ChatColor.GREEN + "ItemsAdder finished loading its stuff, now I load mine");
+        playersManager = new PlayersManager(instance);
+        playersManager.scheduleHudsHandling();
+        if(mainCmd == null)
+        {
+            mainCmd = new MainCommand(instance);
+            Bukkit.getPluginCommand("monitor").setExecutor(mainCmd);
+        }
+    }
+
+    @EventHandler
+    private void catchReloadIA_plugman(PluginDisableEvent e)
+    {
+        if(!e.getPlugin().getName().equals("ItemsAdder"))
+            return;
+
+        Main.clear();
     }
 
     public static void clear()

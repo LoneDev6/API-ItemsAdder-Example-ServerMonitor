@@ -10,6 +10,10 @@ You must copy and paste servermonitor_data folder content into your plugins\Item
 # Example
 ![](https://i.imgur.com/yxXluUY.png)
 
+# Commands
+/monitor cpu
+/monitor ram
+
 # Remember to include your ItemsAdder.jar as dependency
 
 [API docs](https://itemsadder.plugin.ga/developers/java-api)

@@ -11,8 +11,8 @@ You must copy and paste servermonitor_data folder content into your plugins\Item
 ![](https://i.imgur.com/yxXluUY.png)
 
 # Commands
-/monitor cpu
-/monitor ram
+- /monitor cpu
+- /monitor ram
 
 # Remember to include your ItemsAdder.jar as dependency
 

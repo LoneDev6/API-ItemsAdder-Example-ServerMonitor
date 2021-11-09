@@ -1,5 +1,5 @@
 name: ServerMonitor
-version: ${project.version}
+version: 1.0.1
 main: dev.lone.ServerMonitor.Main
 api-version: 1.13
 authors: [LoneDev]

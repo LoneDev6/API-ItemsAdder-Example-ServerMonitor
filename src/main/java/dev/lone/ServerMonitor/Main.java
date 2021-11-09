@@ -23,13 +23,9 @@ public final class Main extends JavaPlugin implements Listener
         instance = this;
 
         if(ItemsAdder.areItemsLoaded())
-        {
             init();
-        }
         else
-        {
             Bukkit.getPluginManager().registerEvents(this, this);
-        }
     }
 
     @Override

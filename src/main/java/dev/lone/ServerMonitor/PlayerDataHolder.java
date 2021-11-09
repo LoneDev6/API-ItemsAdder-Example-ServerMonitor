@@ -1,9 +1,9 @@
 package dev.lone.ServerMonitor;
 
 import dev.lone.itemsadder.api.FontImages.FontImageWrapper;
-import dev.lone.itemsadder.api.FontImages.PlayerCustomHUDWrapper;
-import dev.lone.itemsadder.api.FontImages.PlayerHUDsHolderWrapper;
-import dev.lone.itemsadder.api.FontImages.PlayerQuantityHudWapper;
+import dev.lone.itemsadder.api.FontImages.PlayerCustomHudWrapper;
+import dev.lone.itemsadder.api.FontImages.PlayerHudsHolderWrapper;
+import dev.lone.itemsadder.api.FontImages.PlayerQuantityHudWrapper;
 import org.bukkit.entity.Player;
 
 public class PlayerDataHolder
@@ -14,32 +14,32 @@ public class PlayerDataHolder
     private static final String hudTextRamName = "servermonitor:text_ram";
     private static final String hudTextCPUName = "servermonitor:text_cpu";
 
-    public PlayerHUDsHolderWrapper playerHUDsHolder;
+    public PlayerHudsHolderWrapper holder;
 
-    public PlayerCustomHUDWrapper hudCPU;
-    public PlayerCustomHUDWrapper hudTextCPU;
+    public PlayerCustomHudWrapper hudCPU;
+    public PlayerCustomHudWrapper hudTextCPU;
     public boolean isCPUShown;
 
-    public PlayerQuantityHudWapper hudRam;
-    public PlayerCustomHUDWrapper hudTextRam;
+    public PlayerQuantityHudWrapper hudRam;
+    public PlayerCustomHudWrapper hudTextRam;
     public boolean isRAMShown;
 
     public PlayerDataHolder(Player player)
     {
         this.player = player;
-        playerHUDsHolder = new PlayerHUDsHolderWrapper(player);
-        hudCPU = new PlayerCustomHUDWrapper(playerHUDsHolder, hudCPUName);
-        hudRam = new PlayerQuantityHudWapper(playerHUDsHolder, hudRamName);
-        hudTextRam = new PlayerCustomHUDWrapper(playerHUDsHolder, hudTextRamName);
-        hudTextCPU = new PlayerCustomHUDWrapper(playerHUDsHolder, hudTextCPUName);
+        holder = new PlayerHudsHolderWrapper(player);
+        hudCPU = new PlayerCustomHudWrapper(holder, hudCPUName);
+        hudRam = new PlayerQuantityHudWrapper(holder, hudRamName);
+        hudTextRam = new PlayerCustomHudWrapper(holder, hudTextRamName);
+        hudTextCPU = new PlayerCustomHudWrapper(holder, hudTextCPUName);
 
-        if(hudCPU == null)
+        if (hudCPU == null)
             throwHudNotFound(hudCPUName);
-        if(hudRam == null)
+        if (hudRam == null)
             throwHudNotFound(hudRamName);
-        if(hudTextRam == null)
+        if (hudTextRam == null)
             throwHudNotFound(hudTextRamName);
-        if(hudTextCPU == null)
+        if (hudTextCPU == null)
             throwHudNotFound(hudTextCPUName);
     }
 
@@ -48,7 +48,8 @@ public class PlayerDataHolder
         try
         {
             throw new NullPointerException("Cannot find HUD: " + namespacedID);
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             e.printStackTrace();
         }
@@ -59,7 +60,7 @@ public class PlayerDataHolder
         //TODO: check if exists before
         hudTextCPU.addFontImage(new FontImageWrapper(hudTextCPUName));
         hudCPU.addFontImage(new FontImageWrapper("servermonitor:graph_start"));
-        for(int j=0;j<128;j++)
+        for (int j = 0; j < 128; j++)
         {
             //TODO: check if exists before
             hudCPU.addFontImage(new FontImageWrapper("servermonitor:graph_1"));

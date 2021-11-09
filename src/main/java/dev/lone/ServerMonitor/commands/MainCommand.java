@@ -47,7 +47,7 @@ public class MainCommand implements CommandExecutor
                 playerData.hudTextRam.setVisible(true);
                 playerData.isRAMShown = true;
             }
-            playerData.playerHUDsHolder.recalculateOffsets();
+            playerData.holder.recalculateOffsets();
             playerData.hudRam.setFloatValue(0);
         }
         else if(args[0].equals("cpu"))
@@ -72,8 +72,9 @@ public class MainCommand implements CommandExecutor
                 playerData.hudCPU.setVisible(true);
                 playerData.initHudCPU();
                 playerData.isCPUShown = true;
-                playerData.playerHUDsHolder.recalculateOffsets();
             }
+            playerData.holder.recalculateOffsets();
+            playerData.holder.sendUpdate();
         }
         return true;
     }

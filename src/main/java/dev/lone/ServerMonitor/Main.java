@@ -13,7 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class Main extends JavaPlugin implements Listener
 {
     public static Main instance;
-    public static PlayersManager playersManager;
+    public static HudsHandler hudsHandler;
 
     private static MainCommand mainCmd;
 
@@ -43,12 +43,15 @@ public final class Main extends JavaPlugin implements Listener
     private void init()
     {
         getLogger().info(ChatColor.GREEN + "ItemsAdder finished loading its stuff, now I load mine");
-        playersManager = new PlayersManager(instance);
-        playersManager.scheduleHudsHandling();
+        hudsHandler = new HudsHandler(instance);
+        hudsHandler.scheduleHudsHandling();
         if(mainCmd == null)
         {
             mainCmd = new MainCommand(instance);
-            Bukkit.getPluginCommand("monitor").setExecutor(mainCmd);
+            //noinspection DataFlowIssue
+            getCommand("monitor").setExecutor(mainCmd);
+            //noinspection DataFlowIssue
+            getCommand("monitor").setTabCompleter(mainCmd);
         }
     }
 
@@ -63,10 +66,10 @@ public final class Main extends JavaPlugin implements Listener
 
     public static void clear()
     {
-        playersManager.taskRAM.cancel();
-        playersManager.taskCPU.cancel();
+        hudsHandler.taskRAM.cancel();
+        hudsHandler.taskCPU.cancel();
 
-        for(PlayerDataHolder entry : playersManager.playersData.values())
+        for(PlayerHudsData entry : hudsHandler.playersData.values())
         {
             entry.hudTextRam.setVisible(false);
             entry.hudRam.setVisible(false);
@@ -76,20 +79,7 @@ public final class Main extends JavaPlugin implements Listener
             entry.hudTextRam.clearFontImagesAndRefresh();
             entry.hudCPU.clearFontImagesAndRefresh();
         }
-        playersManager.playersData.clear();
-        playersManager = null;
+        hudsHandler.playersData.clear();
+        hudsHandler = null;
     }
 }
-
-/*
-    var str = "";
-    for(var i=0;i<25;i++)
-    {
-        str += `\n  graph_`+i+`:
-        path: "font/hud/graph/`+i+`.png"
-        y_position: -12`;
-
-    }
-
-    console.log(str);
-*/

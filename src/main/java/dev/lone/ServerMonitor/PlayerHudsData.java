@@ -6,9 +6,8 @@ import dev.lone.itemsadder.api.FontImages.PlayerHudsHolderWrapper;
 import dev.lone.itemsadder.api.FontImages.PlayerQuantityHudWrapper;
 import org.bukkit.entity.Player;
 
-public class PlayerDataHolder
+public class PlayerHudsData
 {
-    private Player player;
     private static final String hudCPUName = "servermonitor:cpu_graph";
     private static final String hudRamName = "servermonitor:ram";
     private static final String hudTextRamName = "servermonitor:text_ram";
@@ -24,9 +23,8 @@ public class PlayerDataHolder
     public PlayerCustomHudWrapper hudTextRam;
     public boolean isRAMShown;
 
-    public PlayerDataHolder(Player player)
+    public PlayerHudsData(Player player)
     {
-        this.player = player;
         holder = new PlayerHudsHolderWrapper(player);
         hudCPU = new PlayerCustomHudWrapper(holder, hudCPUName);
         hudRam = new PlayerQuantityHudWrapper(holder, hudRamName);

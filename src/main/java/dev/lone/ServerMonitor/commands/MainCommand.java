@@ -1,14 +1,19 @@
 package dev.lone.ServerMonitor.commands;
 
 import dev.lone.ServerMonitor.Main;
-import dev.lone.ServerMonitor.PlayerDataHolder;
+import dev.lone.ServerMonitor.PlayerHudsData;
+import dev.lone.ServerMonitor.HudsHandler;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
-public class MainCommand implements CommandExecutor
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainCommand implements CommandExecutor, TabCompleter
 {
     Plugin plugin;
 
@@ -27,11 +32,11 @@ public class MainCommand implements CommandExecutor
 
         if(args[0].equals("ram"))
         {
-            PlayerDataHolder playerData = Main.playersManager.playersData.get(player);
+            PlayerHudsData playerData = Main.hudsHandler.playersData.get(player);
             if(playerData == null)
-                playerData = new PlayerDataHolder(player);
+                playerData = new PlayerHudsData(player);
 
-            Main.playersManager.playersData.put(player, playerData);
+            Main.hudsHandler.playersData.put(player, playerData);
 
             if (playerData.isRAMShown)
             {
@@ -52,11 +57,11 @@ public class MainCommand implements CommandExecutor
         }
         else if(args[0].equals("cpu"))
         {
-            PlayerDataHolder playerData = Main.playersManager.playersData.get(player);
+            PlayerHudsData playerData = Main.hudsHandler.playersData.get(player);
             if(playerData == null)
-                playerData = new PlayerDataHolder(player);
+                playerData = new PlayerHudsData(player);
 
-            Main.playersManager.playersData.put(player, playerData);
+            Main.hudsHandler.playersData.put(player, playerData);
 
             if (playerData.isCPUShown)
             {
@@ -76,7 +81,24 @@ public class MainCommand implements CommandExecutor
             playerData.holder.recalculateOffsets();
             playerData.holder.sendUpdate();
         }
+        else if(args[0].equals("debug"))
+        {
+            HudsHandler.DEBUG = !HudsHandler.DEBUG;
+        }
         return true;
     }
 
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args)
+    {
+        if (args.length == 1)
+        {
+            List<String> strings = new ArrayList<>();
+            strings.add("ram");
+            strings.add("cpu");
+            strings.add("debug");
+            return strings;
+        }
+        return new ArrayList<>();
+    }
 }
